@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Barcode</th>
+    <th>Description</th>
+    <th>Status</th>
+  </tr>
+  {{#each barcode}} {{#unless active}}
+  <tr>
+    <td>{{UPC}}</td>
+    <td><textarea maxlength="50" placeholder="{{Description}}"></textarea></td>
+    <td><button class="btn btn-default" data-id="{{UPC}}">Inactive</button></td>
+  </tr>
+  {{/unless}} {{/each}}
+</table>
