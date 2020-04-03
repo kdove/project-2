@@ -1,8 +1,12 @@
+const Company = require('./company');
+const User = require('./user');
+
 module.exports = (sequelize, DataTypes) => {
     const Barcode = sequelize.define("Barcode", {
         Upc: {
             type: DataTypes.STRING(128),
-            allowNull: false
+            allowNull: false,
+            unique: true,
         },
 
         Description: {
@@ -28,10 +32,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Barcode.create(fakeBarcode);
-
     Barcode.associate = (models) => {
         Barcode.belongsTo(models.User);
+        Barcode.belongsTo(models.Company);
     }
 
     return Barcode;

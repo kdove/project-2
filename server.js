@@ -22,9 +22,46 @@ app.use(passport.session());
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
+
+var fakeCompany = {
+  Gs1Prefix: "423234",
+  CompanyName: "SMU Bootcamp"
+};
+
+var fakeUser = {
+  Email: "thomasj@gmail.com",
+  Password: "tigerking1",
+  CompanyId: 1
+};
+
+var fakeBarcode = {
+  Upc: "34534564564534563456",
+  Description: "My Description",
+  Active: 1,
+  Retired: 0,
+  DateActivated: new Date(),
+  CompanyId: 1,
+  UserId: 1
+};
+
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(function() {
+db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+    var promises = [
+      db.Company.create(fakeCompany),
+      db.User.create(fakeUser),
+      db.Barcode.create(fakeBarcode)
+    ];
+    Promise.all(promises).then(function() {
+      db.Barcode.findAll({
+        include: [{
+          model: db.User,
+          model: db.Company
+        }]
+      }).then(function(res) {
+        console.log(res[0]);
+      });
+    });
   });
 });

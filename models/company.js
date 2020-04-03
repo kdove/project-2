@@ -12,7 +12,14 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Company.create(fakeCompany);
+    Company.associate = function(models) {
+        Company.hasMany(models.Barcode, {
+            onDelete: "cascade"
+        });
+        Company.hasMany(models.User, {
+            onDelete: "cascade"
+        });
+    };
 
     return Company;
 };
