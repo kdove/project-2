@@ -33,13 +33,7 @@ $(document).ready(function() {
       password: password,
       company: company
     })
-<<<<<<< HEAD
-      .then(function(data, err) {
-        console.log(err);
-        console.log(data);
-=======
-    .then(function(data) {
->>>>>>> master
+      .then(function(data) {
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
