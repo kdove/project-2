@@ -11,10 +11,13 @@ $(document).ready(function() {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
+    
 
     if (!userData.email || !userData.password) {
       return;
     }
+
+
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password);
     emailInput.val("");
@@ -28,7 +31,8 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function(data) {
+    .then(function(data) {
+        console.log(data);
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
