@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    // Barcode.create(fakeBarcode);
+    Barcode.create(fakeBarcode);
 
     Barcode.associate = (models) => {
         Barcode.belongsTo(models.User);

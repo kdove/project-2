@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    // Company.create(fakeCompany);
+    Company.create(fakeCompany);
 
     return Company;
 };

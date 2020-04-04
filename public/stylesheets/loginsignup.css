@@ -1,0 +1,30 @@
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: purple;
+}
+
+.container {
+    margin: 50px 50px 50px 50px;
+    padding: 50px 50px 50px 50px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    max-width: 960px;
+    background-color: blue;
+    border-radius: 10px;
+}
+
+.col {
+    background-color: yellow;
+    float: left;
+    width: 50%;
+    align-content: center;
+    text-align: center;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    background-color: red;
+}
