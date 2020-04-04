@@ -1,4 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.container-fluid {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  width: 100%;
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+  padding: 0px;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
+}
+
+header {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  background-color: black;
+  height: 60px !important;
+  overflow: hidden;
+  z-index: 10;
+  border-bottom: 2px solid goldenrod;
+}
+
+.topright {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 8px;
+  left: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: goldenrod;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.04em;
 }
