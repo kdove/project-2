@@ -55,10 +55,14 @@ db.sequelize.sync({ force: true }).then(function() {
     ];
     Promise.all(promises).then(function() {
       db.Barcode.findAll({
-        include: [{
-          model: db.User,
-          model: db.Company
-        }]
+        include: [
+          {
+            model: db.User
+          },
+          {
+            model: db.Company
+          }
+        ]
       }).then(function(res) {
         console.log(res[0]);
       });

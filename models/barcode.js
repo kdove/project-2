@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
         Upc: {
             type: DataTypes.STRING(128),
             allowNull: false,
-            unique: true,
         },
 
         Description: {
