@@ -1,30 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+  font-size: 65.2%;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
 
 body {
-    margin: 0px;
-    padding: 0px;
-    background-color: purple;
+  background: #e9ebee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  margin: -20px 0 50px;
+}
+
+img {
+  width: 150px;
+}
+
+h1 {
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
+  height: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+span {
+  color: #333;
+  font-size: 12px;
+  display: inline-block;
+  font-weight: 100;
+}
+
+span.forget {
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+span.loginwith {
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+span.loginwith::before {
+  content: "";
+  display: inline-block;
+  width: 42%;
+  height: 1px;
+  background: #aaa;
+  vertical-align: middle;
+  margin-right: 5%;
+}
+
+span.loginwith::after {
+  content: "";
+  display: inline-block;
+  width: 45%;
+  height: 1px;
+  background: #aaa;
+  vertical-align: middle;
+  margin-left: 5%;
+}
+
+a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+button {
+  display: block;
+  border-radius: 20px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button svg {
+  vertical-align: middle;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.i {
+  background-color: transparent;
+  border-color: #fff;
 }
 
 .container {
-    margin: 50px 50px 50px 50px;
-    padding: 50px 50px 50px 50px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    max-width: 960px;
-    background-color: blue;
-    border-radius: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  height: 480px;
 }
 
-.col {
-    background-color: yellow;
-    float: left;
-    width: 50%;
-    align-content: center;
-    text-align: center;
+.fc {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
 }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-    background-color: red;
+.lc {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.rpa .lc {
+  transform: translateX(100%);
+}
+
+.sc {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.rpa .sc {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.oc {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.rpa .oc {
+  transform: translateX(-100%);
+}
+
+.ov {
+  background: #fe8c00;
+  background: -webkit-linear-gradient(to right, #fe8c00, #f83600);
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.rpa .ov {
+  transform: translateX(50%);
+}
+
+.op {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.ol {
+  transform: translateX(-20%);
+}
+
+.container.rpa .ol {
+  transform: translateX(0);
+}
+
+.or {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.rpa .or {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 20px 0;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.social-container a {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 30px;
+}
+
+.facebook {
+  background-color: white;
+  color: #3b5998;
+}
+
+.twitter {
+  background-color: white;
+  color: #55acee;
+}
+
+.google {
+  background-color: white;
+  color: #dd4b39;
+}
+
+.linkedin {
+  background-color: white;
+  color: #007bb5;
+}
+
+.github {
+  background-color: white;
+  color: #6e5494;
 }
