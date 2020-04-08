@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>tally</title>
+    <meta name="description" content="tally" />
+    <meta name="author" content="Team Red" />
+    <meta http-equiv="X-UA-Compatible" content="ie=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="./stylesheets/loginsignup.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="icon" href="../Images/orange-tally/favicon.png">
+    <script src="https://use.fontawesome.com/0c8059d717.js"></script>
+  </head>
+
+  <body>
+    <!-- MAIN CONTAINER -->
+    <div class="container" id="container">
+      <!-- SIGN UP CONTAINER -->
+      <div class="fc sc">
+        <!-- SIGN UP FORM -->
+        <form action="#" class="signup">
+          <!-- IMAGE -->
+          <img src="../Images/orange-tally/tally_orange_logo_transparent.png" />
+          <!-- SIGN UP TITLE -->
+          <h1>Sign up</h1>
+          <!-- <div class="form-group"> -->
+          <!-- COMPANY -->
+          <!-- <label for="exampleInputCompany">Company</label> -->
+          <input type="company" class="form-control" id="company-input" placeholder="Company" required />
+          <!-- </div> -->
+          <!-- <div class="form-group"> -->
+          <!-- <label for="exampleInputEmail1">Email address</label> -->
+          <input type="email" class="form-control" id="email-input" placeholder="Email" required />
+          <!-- </div> -->
+          <!-- <div class="form-group"> -->
+          <!-- <label for="exampleInputPassword1">Password</label> -->
+          <input type="password" class="form-control" id="password-input" placeholder="Password" required />
+
+          <span>By creating an account you agree to our
+            <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</span>
+          <!-- </div> -->
+          <!-- <div class="form-group">
+          <label for="password-input-confirm">
+          <input type="password" placeholder="Confirm Password" name="password-input-confirm" required></label>
+          </div> -->
+          <button type="submit">Sign Up</button>
+          
+          <span class="loginwith">Connect with</span>
+          <div class="social-container">
+            <a href="#" class="social twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="social linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social google"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social github"><i class="fa fa-github"></i></a>
+          </div>
+          </form>
+      </div>
+
+      <div class="fc lc">
+        <form action="#" class="login">
+          <img src="../Images/orange-tally/tally_orange_logo_transparent.png" />
+          <h1>Log In</h1>
+          <!-- <div class="form-group"> -->
+          <!-- <label for="exampleInputEmail1">Email address</label> -->
+          <input type="email" class="form-control" id="email-input" placeholder="Email" required />
+          <!-- </div> -->
+          <!-- <div class="form-group"> -->
+          <!-- <label for="exampleInputPassword1">Password</label> -->
+          <input type="password" class="form-control" id="password-input" placeholder="Password" required />
+          <!-- </div> -->
+          <div style="display: none;" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
+          <button type="submit">Log In</button>
+          <!-- <label>
+              <input type="checkbox" checked="checked" name="remember" class="remember" style="margin-bottom:15px">
+              Remember me
+            </label> -->
+          <br />
+          <span class="password forgot">Forgot <a href="#">password?</a></span>
+          <span class="loginwith">Connect with</span>
+
+          <div class="social-container">
+            <a href="#" class="social twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="social linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social google"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social github"><i class="fa fa-github"></i></a>
+          </div>
+        </form>
+      </div>
+      <div class="oc">
+        <div class="ov">
+          <div class="op ol">
+            <img src="../Images/white-tally/tally_white_logo_transparent.png" alt="tallywhitelogo" />
+            <h1>Welcome Back!</h1>
+
+            <p>Already have an account?</p>
+
+            <button class="i" id="logIn">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-arrow-left-circle">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 8 8 12 12 16" />
+                <line x1="16" y1="12" x2="8" y2="12" />
+              </svg>
+              Log in
+            </button>
+          </div>
+
+          <!-- SIGN IN OVERLAY -->
+          <div class="op or">
+            <h1>Welcome to</h1>
+
+            <img src="../Images/white-tally/tally_white_logo_transparent.png" alt="tallywhitelogo" />
+
+            <p>Join our community!</p>
+
+            <button class="i" id="signUp">
+              Sign Up
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-arrow-right-circle">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 16 16 12 12 8" />
+                <line x1="8" y1="12" x2="16" y2="12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/loginsignup.js"></script>
+  </body>
+
+</html>

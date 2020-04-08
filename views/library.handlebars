@@ -2,13 +2,16 @@
   <tr>
     <th>Barcode</th>
     <th>Description</th>
-    <th>Status</th>
+    <th>Active</th>
   </tr>
-  {{#each barcode}} {{#if active}}
-  <tr>
-    <td>{{UPC}}</td>
-    <td><textarea maxlength="50" placeholder="{{Description}}"></textarea></td>
-    <td><button class="btn btn-default" data-id="{{UPC}}">Active</button></td>
+  {{#each barcode}} 
+  {{!-- {{#if Active}} --}}
+  <tr id="{{Upc}}">
+    <td class="upc">{{Upc}}</td>
+    <td><textarea class="text" maxlength="50" placeholder="{{Description}}"></textarea></td>
+    <td class="status">{{Active}}</td>
+    <td><button class="btn btn-default" data-id="{{Upc}}">Save</button></td>
   </tr>
-  {{/if}} {{/each}}
+  {{!-- {{/if}}  --}}
+  {{/each}}
 </table>
