@@ -9,23 +9,23 @@
         <div class="profile-avatar"></div>
         <ul role="navigation" class="admin-menu">
             <li>
-                <a href="#members"> <i class="fa fa-tachometer fa-lg" aria-hidden="true"></i>
+                <a href="/home"> <i class="fa fa-tachometer fa-lg" aria-hidden="true"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a class="active" href="#library">
+                <a class="active" href="/library">
                     <i class="fa fa-barcode fa-lg" aria-hidden="true"></i>
                     <span>Library</span>
                 </a>
             </li>
-            <li>
+            {{!-- <li>
                 <a href="#products"><i class="fa fa-tags fa-lg" aria-hidden="true"></i>
                     <span>Products</span>
                 </a>
-            </li>
+            </li> --}}
             <li>
-                <a href="#inventory">
+                <a href="/library-new">
                     <i class="fas fa-warehouse fa-lg" aria-hidden="true"></i>
                     <span>Inventory</span>
                 </a>
@@ -71,16 +71,16 @@
     </section>
     <section class="grid">
         <article class="library">
-            {{#if home barcode}}
+            {{#if home }}
             {{> pages/home}}
             {{/if}}
             ​
-            {{#if myLibrary barcode}}
-            {{> pages/library}}
+            {{#if library }}
+            {{> pages/library barcode=barcode}}
             {{/if}}
             ​
-            {{#if addLibraryBarcode barcode}}
-            {{> pages/add-barcodes}}
+            {{#if libraryNew}}
+            {{> pages/add-barcodes barcode=barcode}}
             {{/if}}
         </article>
         <footer class="page-footer">

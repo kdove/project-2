@@ -35,7 +35,7 @@
           <!-- </div> -->
           <!-- <div class="form-group"> -->
           <!-- <label for="exampleInputPassword1">Password</label> -->
-          <input type="password" class="form-control" id="password-input" placeholder="Password" required />
+          <input type="password" class="form-control" id="password-input" placeholder="Password" required autocomplete="on" />
 
           <span>By creating an account you agree to our
             <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</span>
@@ -63,11 +63,11 @@
           <h1>Log In</h1>
           <!-- <div class="form-group"> -->
           <!-- <label for="exampleInputEmail1">Email address</label> -->
-          <input type="email" class="form-control" id="email-input" placeholder="Email" required />
+          <input type="email" class="form-control" id="current-email-input" autocomplete="on" placeholder="Email" required />
           <!-- </div> -->
           <!-- <div class="form-group"> -->
           <!-- <label for="exampleInputPassword1">Password</label> -->
-          <input type="password" class="form-control" id="password-input" placeholder="Password" required />
+          <input type="password" class="form-control" id="current-password-input" autocomplete="on" placeholder="Password" required />
           <!-- </div> -->
           <div style="display: none;" id="alert" class="alert alert-danger" role="alert">
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -134,6 +134,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./js/loginsignup.js"></script>
   </body>
 

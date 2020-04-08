@@ -1,0 +1,20 @@
+{{#if barcode}}
+<table>
+  <tr>
+    <th>Barcode</th>
+    <th>Description</th>
+    <th>Active</th>
+  </tr>
+  {{#each barcode}} 
+    <tr id="{{Upc}}">
+        <td class="upc">{{Upc}}</td>
+        <td><textarea class="text" maxlength="50" placeholder="{{Description}}"></textarea></td>
+        <td class="status">{{Active}}</td>
+        <td><button class="btn btn-default" data-id="{{Upc}}">Save</button></td>
+    </tr>
+  {{/each}}
+</table>
+{{/if}}
+{{#else}}
+<P>please access the <a href="/library-new">new barcodes</a> page</P>
+{{/else}}
