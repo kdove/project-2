@@ -12,7 +12,7 @@ module.exports = (app) => {
     if (req.user) {
       res.redirect("/home");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/loginsignup.html"));
   });
 
   app.get("/login", (req, res) => {
@@ -20,11 +20,11 @@ module.exports = (app) => {
     // if (req.user) {
     //   res.redirect("/members");
     // }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/loginsignup.html"));
   });
 
   app.get("/home", (req,res) => {
-    res.render("index", req.query);
+    res.render("index", { home: true });
   });
 
 
@@ -40,7 +40,7 @@ module.exports = (app) => {
       console.log("hbrsResponse", hbrsResponse);
       res.render("index", {
         barcode: hbrsResponse,
-        home: true,
+        library: true,
       });
     });
   });
