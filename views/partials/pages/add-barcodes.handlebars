@@ -1,3 +1,4 @@
+{{#if barcode}}
 <table>
   <tr>
     <th>Barcode</th>
@@ -13,3 +14,7 @@
     </tr>
   {{/each}}
 </table>
+{{/if}}
+{{#else}}
+<P>please access the <a href="/library-new">new barcodes</a> page</P>
+{{/else}}
