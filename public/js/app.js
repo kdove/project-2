@@ -1,39 +1,38 @@
 $(document).ready(function () {
-    $.get("/api/library").then(function (data) {
-        $(".upc").text(data.UPC);
-        $(".text").text(data.description);
-        $(".status").text(data.status);
-    });
+  $.get("/api/library").then(function (data) {
+    $(".upc").text(data.UPC);
+    $(".text").text(data.description);
+    $(".status").text(data.status);
+  });
 
-    $.get("/api/add").then(function (data) {
-        $(".upc").text(data.UPC);
-        $(".text").text(data.description);
-        $(".status").text(data.status);
-    });
+  $.get("/api/add").then(function (data) {
+    $(".upc").text(data.UPC);
+    $(".text").text(data.description);
+    $(".status").text(data.status);
+  });
 
-    var button = $("#data-id");
-    var upcAdd = $(".upc");
-    var descriptionAdd = $(".text");
-    var statusAdd = $(".status")
+  var button = $("#data-id");
+  var upcAdd = $(".upc");
+  var descriptionAdd = $(".text");
+  var statusAdd = $(".status");
 
 
-  button.on("click", function(event) {
+  button.on("click", function (event) {
     event.preventDefault();
+    var thisRow = $(this);
     var upcData = {
-      upc: upcAdd.val().trim(),
-      description: descriptionAdd.val().trim(),
-      status: statusAdd.val().trim()
+      upc: thisRow.$(".upc").val().trim(),
+      description: thisRow.$(".text").val().trim(),
+      status: thisRow.$(".status").val().trim()
     };
 
     changeStatusAdd(upcData.upc, upcData.description, upcData.status);
-    upcAdd.val("");
-    descriptionAdd.val("");
-    statusAdd.val("");
+    // $("#"+upcData.upc).hide();
 
     changeStatusLibarary(upcData.upc, upcData.description, upcData.status);
-    upcAdd.val("");
-    descriptionAdd.val("");
-    statusAdd.val("");
+    // upcAdd.val("");
+    // descriptionAdd.val("");
+    // statusAdd.val("");
   });
 
   function changeStatusAdd(UPC, description, status) {
@@ -42,10 +41,11 @@ $(document).ready(function () {
       description: description,
       status: status
     })
-      .then(function(res) {
+      .then(function (res) {
         console.log("Success!");
-      }
-      .catch(function(err) {
+      })
+
+      .catch(function (err) {
         console.log(err);
       });
   }
@@ -56,10 +56,10 @@ $(document).ready(function () {
       description: description,
       status: status
     })
-      .then(function() {
+      .then(function () {
         console.log("Success!");
-
-      .catch(function(err) {
+      })
+      .catch(function (err) {
         console.log(err);
       });
   }
