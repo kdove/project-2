@@ -1,10 +1,11 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
+const db = require("../models");
+const passport = require("../config/passport");
+const html = require("./html-routes");
 
-var GSM = 12356;
+let GSM = 12356;
 
-module.exports = function(app) {
+module.exports = (app) => {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -22,11 +23,13 @@ module.exports = function(app) {
           Email: email,
           Password: password,
           CompanyId: data.dataValues.id
-        })
+        });
       })
     ];
     return Promise.all(promises).then((resp, err) => {
-      if (err) return res.status(500).json(err);
+      if (err) {
+        return res.status(500).json(err);
+      }
 
       db.Company.findAll({
         include: [{
@@ -36,20 +39,22 @@ module.exports = function(app) {
         console.log(response[0].dataValues);
         res.json(response[0].dataValues);
       });
-    })
+    });
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("local"), (req, res) => {
     db.User.findOne({
+      include: [
+        { model: db.Company }
+      ],
       where: {
         Email: req.body.email
       }
     })
       .then((response) => {
-        console.log(response);
         res.json(response);
         // res.redirect(307, "/api/login");
       })

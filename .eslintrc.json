@@ -1,8 +1,12 @@
 {
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
     "env": {
         "browser": true,
         "commonjs": true,
-        "node": true
+        "node": true,
+        "es6": true
     },
     "rules": {
         "no-duplicate-case":"error",
@@ -29,13 +33,8 @@
             "error",
             2
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
         "quotes": [
-            "error",
-            "double"
+            "error"
         ],
         "semi": [
             "error",
