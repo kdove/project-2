@@ -418,3 +418,28 @@ body {
   margin-top: 10px;
   color: #015077;
 }
+
+#empty-barcodes {
+  margin: auto;
+}
+
+#empty-barcode-text {
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid #e55c25;
+}
+table {
+  width: 80%;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #e55c25;
+  color: white;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
