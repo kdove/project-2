@@ -20,27 +20,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript">
-    //TESTING JAVASCRIPT FILE & HTML ARE PROPERLY LINKED
-    console.log("HTML & JAVA PROPERLY LINKED!!");
-
-        $(document).ready(() => {
-            setUserDropdownListener();
-        });
-        function toggleClass(el, className) {
-            if (el.hasClass(className)) {
-                el.removeClass(className);
-            } else {
-                el.addClass(className);
-            }
-        }
-        function setUserDropdownListener() {
-            const userAvatar = $('.user-avatar');
-            userAvatar.on('click', function (e) {
-                const dropdownEl = $(this).children('.dropdown')
-                toggleClass(dropdownEl, 'dropdown-active')
-            })
-        };
-  </script>
+  <script src="js/main.js"></script>
   </body>
   </html>
