@@ -9,12 +9,16 @@
     <tr id="{{Upc}}">
         <td class="upc">{{Upc}}</td>
         <td><textarea class="text" maxlength="50" placeholder="{{Description}}"></textarea></td>
-        <td class="status">{{Active}}</td>
-        <td><button class="btn btn-default" data-id="{{Upc}}">Save</button></td>
+        <td><button class="btn btn-default" data-id="{{Upc}}">Deactivate</button></td>
     </tr>
   {{/each}}
 </table>
 {{/if}}
 {{#unless barcode}}
-<P>please access the <a href="/library-new">new barcodes</a> page</P>
+<div id= "empty-barcodes">
+<a href="/library-new">
+<img border="0" alt="barcode" src="https://miro.medium.com/max/537/1*vjKUBdAgPk5e0M8u2VcWHA.jpeg" width="auto" height="auto">
+</a>
+<p id="empty-barcode-text"><a href="/library-new">Please visit the Inventory page</a></p>
+</div>
 {{/unless}}
