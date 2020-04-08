@@ -138,9 +138,9 @@ button {
   font-weight: bold;
   padding: 12px 45px;
   letter-spacing: 1px;
-  margin-top: 5px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+  margin-top: 3px;
 }
 
 button svg {
@@ -288,9 +288,9 @@ button.i {
 }
 
 .social-container {
-  margin: 20px 0;
-  padding-bottom: 30px;
-  margin-bottom: 20px;
+  margin: 5px 0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .social-container a {
