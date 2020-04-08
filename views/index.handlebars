@@ -1,66 +1,90 @@
 <header class="page-header">
-    <input type="checkbox" class="openSidebar header-menu" id="openSidebar">
-    <label for="openSidebar" class="sidenavIconToggle sidenav-brand-close">
-        <div class="spinner d s1"></div>
-        <div class="spinner h"></div>
-        <div class="spinner d s2"></div>
-    </label>
     <nav>
         <!-- TALLY LOGO -->
         <div class="logo">
             <a href="#">
-                <img class="logo" src="./white-tally/tally_white_logo_transparent.png" alt="white tally logo">
+                <img class="logo" src="../Images/white-tally/tally_white_logo_transparent.png" alt="white tally logo">
             </a>
         </div>
-        <div class="nav-profile">
-            <div class="nav-profile-avatar"></div>
-
-        </div>
-        <div class="nav-profile-title">
-            <h3>Carla Beltran</h3>
-        </div>
-        <ul role="navigation" class="admin-menu hidden">
+        <div class="profile-avatar"></div>
+        <ul role="navigation" class="admin-menu">
             <li>
-                <a class="active" href="#members.html"> <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <a href="#members"> <i class="fa fa-tachometer fa-lg" aria-hidden="true"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="#library.html">
-                    <i class="fa fa-barcode" aria-hidden="true"></i>
+                <a class="active" href="#library">
+                    <i class="fa fa-barcode fa-lg" aria-hidden="true"></i>
                     <span>Library</span>
                 </a>
             </li>
             <li>
-                <a href="#products.html"><i class="fa fa-tags" aria-hidden="true"></i>
+                <a href="#products"><i class="fa fa-tags fa-lg" aria-hidden="true"></i>
                     <span>Products</span>
                 </a>
             </li>
             <li>
-                <a href="#inventory.html">
-                    <i class="fas fa-warehouse" aria-hidden="true"></i>
+                <a href="#inventory">
+                    <i class="fas fa-warehouse fa-lg" aria-hidden="true"></i>
                     <span>Inventory</span>
                 </a>
             </li>
             <li>
-                <a href="#logout.html">
-                    <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                <a href="#logout">
+                    <i class="fas fa-sign-out-alt fa-lg" aria-hidden="true"></i>
                     <span>Log out</span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
-<main>
-    {{#if home barcode}}
-    {{> pages/home}}
-    {{/if}}
-    ​
-    {{#if myLibrary barcode}}
-    {{> pages/library}}
-    {{/if}}
-    ​
-    {{#if addBarcode barcode}}
-    {{> pages/add-barcode}}
-    {{/if}}
-</main>
+<section class="page-content">
+    <section class="search-user">
+        <form>
+            <input type="search" placeholder="Quick search...">
+            <button type="submit" aria-label="submit form">
+                <i class="fa fa-search fa-3x" aria-hidden="true" id="search-icon" style="color: #e55c25;"></i>
+            </button>
+        </form>
+        <div class="admin-profile">
+            <span class="greeting">Hello admin</span>
+            <div class="user-avatar">
+                <div class="dropdown">
+                    <ul class="dropdown-list">
+                        <li class="dropdown-list-item">
+                            <span class="dropdown-icon"><i class="far fa-user"></i></span>
+                            <span class="dropdown-title">Profile</span>
+                        </li>
+                        <li class="dropdown-list-item">
+                            <span class="dropdown-icon"><i class="fas fa-clipboard-list"></i></span>
+                            <span class="dropdown-title">Account</span>
+                        </li>
+                        <li class="dropdown-list-item">
+                            <span class="dropdown-icon"><i class="fas fa-sign-out-alt"></i></span>
+                            <span class="dropdown-title">Log Out</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="grid">
+        <article class="library">
+            {{#if home barcode}}
+            {{> pages/home}}
+            {{/if}}
+            ​
+            {{#if myLibrary barcode}}
+            {{> pages/library}}
+            {{/if}}
+            ​
+            {{#if addLibraryBarcode barcode}}
+            {{> pages/add-barcodes}}
+            {{/if}}
+        </article>
+        <footer class="page-footer">
+            <small> Copyright 2020
+            </small>
+        </footer>
+    </section>
