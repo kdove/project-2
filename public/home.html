@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>tally</title>
+        <meta name="description" content="tally" />
+        <meta name="author" content="Team Red" />
+        <meta http-equiv="X-UA-Compatible" content="ie=Edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- <link rel="icon" href="../Images/orange-tally/favicon.png"> -->
+        <link rel="icon" href="https://github.com/kdove/project-2/blob/master/Images/orange-tally/favicon.png?raw=true">
+        <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
+        <link rel="stylesheet" href="./stylesheets/style.css">
+        <script src="https://use.fontawesome.com/0c8059d717.js"></script>
+    </head>
+
+    <body>
+        <div class="grid">
+            <header class="header">
+                <i class="fas fa-bars header-menu"></i>
+                <div class="search-user">
+                    <form>
+                        <input type="search" placeholder="Quick search...">
+                        <button type="submit" aria-label="submit form">
+                            <i class="fa fa-search fa-3x" aria-hidden="true" id="search-icon"
+                                style="color: #e55c25;"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="admin-profile">
+                    <span class="greeting">Welcome, admin</span>
+                    <div class="user-avatar">
+                        <div class="dropdown">
+                            <ul class="dropdown-list">
+                                <li class="dropdown-list-item">
+                                    <span class="dropdown-icon"><i class="far fa-user"></i></span>
+                                    <span class="dropdown-title">Profile</span>
+                                </li>
+                                <li class="dropdown-list-item">
+                                    <span class="dropdown-icon"><i class="fas fa-clipboard-list"></i></span>
+                                    <span class="dropdown-title">Account</span>
+                                </li>
+                                <li class="dropdown-list-item">
+                                    <span class="dropdown-icon"><i class="fas fa-sign-out-alt"></i></span>
+                                    <span class="dropdown-title">Log Out</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <aside class="sidenav">
+                <!-- TALLY LOGO -->
+                <div class="logo">
+                    <a href="#">
+                        <img class="logo" src="./white-tally/tally_white_logo_transparent.png" alt="white tally logo">
+                    </a>
+                    <i class="fas fa-times logo-close"></i>
+                </div>
+                <div class="sidenav-profile">
+                    <div class="sidenav-profile-avatar"></div>
+                </div>
+                <div class="row row--align-v-center row--align-h-center">
+                    <ul role="navigation" class="admin-menu">
+                        <li>
+                            <a class="active" href="#members.html"> <i class="fa fa-tachometer fa-lg"
+                                    aria-hidden="true"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#library.html">
+                                <i class="fa fa-barcode fa-lg" aria-hidden="true"></i>
+                                <span>Library</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#products.html"><i class="fa fa-tags fa-lg" aria-hidden="true"></i>
+                                <span>Products</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#inventory.html">
+                                <i class="fas fa-warehouse fa-lg" aria-hidden="true"></i>
+                                <span>Inventory</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#logout.html">
+                                <i class="fas fa-sign-out-alt fa-lg" aria-hidden="true"></i>
+                                <span>Log out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <main class="main">
+                <div class="main-header">
+                    <img class="main-header" src="../Images/inventroyimage.png" alt="inventroy banner" style="width:100%;">
+
+                    <div class="main-header-wrapper">
+                        <div class="top-left">
+                            <span class="weekday"></span>, <span class="date"></span> <span class="time"
+                                id="time"></span>
+                        </div>
+                        <div class="main-welcome">
+                            <div class="top-right">
+                                <div class="main-welcome-stitle">Here is whats happening with your store today.</div>
+                            </div>
+                        </div>
+                        <div class="qv">
+                            <div class="qvi-one">
+                                <div class="qvid">
+                                    <span class="text-light">Sales</span>
+                                </div>
+                                <div class="qvit">$65,428</div>
+                            </div>
+                            <div class="qvi-two">
+                                <div class="qvid">
+                                    <span class="text-light">Products in Stock</span>
+                                </div>
+                                <div class="qvit">2,696</div>
+                            </div>
+                            <div class="qvi-three">
+                                <div class="qvid">
+                                    <span class="text-light">Inventory Turnover</span>
+                                </div>
+                                <div class="qvit">$2.65M</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-overview">
+                    <div class="overviewcard">
+                        <div class="overviewcard-i">
+                            <span><i class="fa fa-barcode fa-lg" aria-hidden="true"></i></span>
+                            <span>Barcode Library</span>
+                        </div>
+                    </div>
+
+                    <div class="overviewcard">
+                        <div class="overviewcard-i">
+                            <span><i class="fa fa-plus fa-lg" aria-hidden="true"></i></span>
+                            <span>New Barcode </span>
+                        </div>
+                    </div>
+                    <div class="overviewcard">
+                        <div class="overviewcard-i">
+                            <span><i class="fa fa-upload fa-lg" aria-hidden="true"></i></span>
+                            <span>Bulk Import</span>
+                        </div>
+                    </div>
+                    <div class="overviewcard">
+                        <div class="overviewcard-icon">
+                            <span><i class="far fa-file-image fa-lg"></i><span>
+                                    <span>Build Report</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-cards">
+                    <div class="card">
+                        <h3>Financial Performance</h3>
+                        <br />
+                        <img class="card-image-one" src="../Images/financialperformance.png" alt="finacial graph">
+                    </div>
+                    <div class="card-two">
+                        <h3>Sales by City</h3>
+                        <br />
+                        <img class="card-image-two" src="../Images/piechart.png" alt="sales pie chart">
+                    </div>
+                    <div class="card-three">
+                        <h3>Current Inventory</h3>
+                        <br />
+                        <img class="card-image-three" src="../Image/currentinventory.png" alt="current inventory chart">
+                    </div>
+                    <div class="card-two">
+                        <h3>Current Market Value</h3>
+                        <br />
+                        <img class="card-image-two" src="../Image/Currentmarketvalue.png" alt="current market value chart">
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- <footer class="page-footer">
+            <small> Copyright 2020
+            </small>
+        </footer> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./js/main.js" type="text/javascript"></script>
+    </body>
+
+</html>
