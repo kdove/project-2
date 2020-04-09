@@ -43,6 +43,10 @@ $(document).ready(() => {
   }
 });
 
+$(".dropdown-title").on("click", function(){
+  window.location.href("/logout");
+});
+
 function setUserDropdownListener() {
   const userAvatar = $(".user-avatar");
   userAvatar.on("click", function (e) {
