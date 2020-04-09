@@ -168,7 +168,7 @@ html, body {
 }
 
 .user-avatar {
-  background-image: url("gitprofilepic.png");
+  background-image: url("https://github.com/kdove/project-2/blob/master/Images/img_avatar2.png?raw=true");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
@@ -295,7 +295,7 @@ html, body {
 }
 
 .sidenav-profile-avatar {
-  background-image: url("gitprofilepic.png");
+  background-image: url("https://github.com/kdove/project-2/blob/master/Images/img_avatar2.png?raw=true");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
