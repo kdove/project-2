@@ -8,8 +8,8 @@
   {{#each barcode}} 
     <tr id="{{Upc}}">
         <td class="upc">{{Upc}}</td>
-        <td><textarea class="text" maxlength="50" placeholder="{{Description}}"></textarea></td>
-        <td><button class="btn btn-default" data-id="{{Upc}}">Deactivate</button></td>
+        <td><textarea class="text description-text" maxlength="50" placeholder="{{Description}}"></textarea></td>
+        <td><button class="btn btn-default barcode-button" data-id="{{Upc}}">Deactivate</button></td>
     </tr>
   {{/each}}
 </table>
