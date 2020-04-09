@@ -24,21 +24,23 @@ module.exports = (app) => {
           Password: password,
           CompanyId: data.dataValues.id
         });
+      }).catch(err => {
+        res.status(500).json(err);
       })
     ];
     return Promise.all(promises).then((resp, err) => {
       if (err) {
-        return res.status(500).json(err);
+        res.status(500).json(err);
+      } else {
+        db.Company.findAll({
+          include: [{
+            model: db.User
+          }]
+        }).then(response => {
+          console.log(response[0].dataValues);
+          res.json(response[0].dataValues);
+        });
       }
-
-      db.Company.findAll({
-        include: [{
-          model: db.User
-        }]
-      }).then(response => {
-        console.log(response[0].dataValues);
-        res.json(response[0].dataValues);
-      });
     });
   });
 
@@ -66,10 +68,11 @@ module.exports = (app) => {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+    res.redirect("/login");
   });
 
   // Route for getting some data about our user to be used client side
+  /* Leaving this here as we may want to use this in the future */
   app.get("/api/user_data", function(req, res) {
     console.log(req);
     if (!req.user) {
