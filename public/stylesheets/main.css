@@ -68,7 +68,8 @@ body {
 }
 
 .profile-avatar {
-    background-image: url("img_avatar2.png");
+    background-image: url("https://github.com/kdove/project-2/blob/master/Images/img_avatar2.png?raw=true");
+    /* background-image: url("/project-2/Images/img_avatar2.png"); */
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
@@ -216,7 +217,8 @@ body {
 }
 
 .search-user .admin-profile .user-avatar {
-  background-image: url("img_avatar2.png");
+  background-image: url("https://github.com/kdove/project-2/blob/master/Images/img_avatar2.png?raw=true");
+  /* background-image: url("/project-2/Images/img_avatar2.png"); */
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
@@ -416,3 +418,28 @@ body {
   margin-top: 10px;
   color: #015077;
 }
+
+#empty-barcodes {
+  margin: auto;
+}
+
+#empty-barcode-text {
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid #e55c25;
+}
+table {
+  width: 80%;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #e55c25;
+  color: white;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
